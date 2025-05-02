@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝐊𝟕𝐇 - سيرفر روكيت ليق</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(120deg, #000, #111, #000);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            color: #eee;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .circle {
+            position: fixed;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.2);
+            animation: float 20s linear infinite;
+            opacity: 0.4;
+        }
+        .circle:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 20%; animation-duration: 18s;}
+        .circle:nth-child(2) { width: 120px; height: 120px; top: 60%; left: 70%; animation-duration: 25s;}
+        .circle:nth-child(3) { width: 50px; height: 50px; top: 30%; left: 50%; animation-duration: 22s;}
+        .circle:nth-child(4) { width: 100px; height: 100px; top: 80%; left: 10%; animation-duration: 28s;}
+        .circle:nth-child(5) { width: 70px; height: 70px; top: 50%; left: 80%; animation-duration: 20s;}
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(20px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            background: linear-gradient(270deg, #FFD700, #ff8c00, #FFD700);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 4s ease infinite;
+            text-shadow: 0 0 10px #FFD70055;
+        }
+
+        @keyframes gradientText {
+            0% {background-position: 0%;}
+            50% {background-position: 100%;}
+            100% {background-position: 0%;}
+        }
+
+        .intro {
+            text-align: center;
+            padding: 15px;
+            font-size: 1em;
+            max-width: 700px;
+            margin: auto;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+        }
+
+        .card {
+            background: rgba(34, 34, 34, 0.85);
+            border: 2px solid #FFD700;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: zoomIn 1s ease;
+            font-size: 1em;
+        }
+
+        .card:hover {
+            transform: translateY(-6px) scale(1.04);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+        }
+
+        .card h3 {
+            color: #FFD700;
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+
+        .card p {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        @keyframes zoomIn {
+            from {transform: scale(0.8); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .join-btn {
+            display: inline-block;
+            background: #FFD700;
+            color: #111;
+            padding: 12px 30px;
+            margin: 25px auto;
+            font-size: 1em;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .join-btn:hover {
+            background: #e6c200;
+            transform: scale(1.08);
+        }
+
+        @keyframes pulse {
+            0% {box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);}
+            70% {box-shadow: 0 0 12px 8px rgba(255, 215, 0, 0);}
+            100% {box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);}
+        }
+
+        .contact {
+            background: rgba(34, 34, 34, 0.9);
+            padding: 30px 25px;
+            text-align: center;
+            margin: 50px auto;
+            width: 320px;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+            animation: fadeIn 1.5s ease;
+            font-size: 1em;
+        }
+
+        .contact h2 {
+            color: #FFD700;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            margin: 8px 0;
+            font-size: 1em;
+        }
+
+        .contact .email {
+            display: inline-block;
+            background: linear-gradient(90deg, #FFD700, #ff8c00, #FFD700);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientEmail 4s ease infinite;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        @keyframes gradientEmail {
+            0% {background-position: 0%;}
+            50% {background-position: 100%;}
+            100% {background-position: 0%;}
+        }
+
+        .contact a.tiktok-link {
+            display: inline-block;
+            color: #FFD700;
+            background: #222;
+            padding: 10px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            font-size: 1em;
+        }
+
+        .contact a.tiktok-link:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            color: #555;
+            padding: 12px;
+            font-size: 0.8em;
+            background: #000;
+        }
+
+        /* إزالة الإطار الأزرق عند الضغط */
+        *:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- دوائر الخلفية -->
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <header>
+        <h1>𝐊𝟕𝐇</h1>
+    </header>
+
+    <div class="intro">
+        <p>مرحباً بك في <strong>𝐊𝟕𝐇</strong>، المكان المثالي للبحث عن فريق روكيت ليق، سواء كنت محترف أو مبتدئ. شارك معنا، تواصل مع اللاعبين، وادخل بطولاتنا الحماسية!</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>مجتمع نشيط</h3>
+            <p>تفاعل دائم مع لاعبين رائعين وبحث سهل عن الفريق المناسب.</p>
+        </div>
+        <div class="card">
+            <h3>بطولات حماسية</h3>
+            <p>شارك في بطولات أسبوعية، تنافس، واربح!</p>
+        </div>
+        <div class="card">
+            <h3>دعم سريع</h3>
+            <p>فريق إدارة متواجد لدعمك وتقديم المساعدة متى احتجت.</p>
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <a href="https://discord.gg/H5DY2t2U" class="join-btn">انضم الآن</a>
+    </div>
+
+    <div class="contact">
+        <h2>تواصل معنا</h2>
+        <p class="email">k7hserver.1@gmail.com</p>
+        <p><a href="https://www.tiktok.com/@k7h_on_top?_t=ZS-8w20a3Zx5bE&_r=1" target="_blank" class="tiktok-link">تيك توك</a></p>
+    </div>
+
+    <footer>
+        &copy; 2025 𝐊𝟕𝐇 | جميع الحقوق محفوظة
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
